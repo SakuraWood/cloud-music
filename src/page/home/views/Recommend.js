@@ -20,7 +20,7 @@ export default class Recommend extends PureComponent {
         require("./../../../assets/img/Jellyfish.jpg"),
         require("./../../../assets/img/Koala.jpg"),
         require("./../../../assets/img/Hydrangeas.jpg")
-      ]
+      ],
     };
   }
 
@@ -30,12 +30,20 @@ export default class Recommend extends PureComponent {
 
   render() {
     return (
-      <View>
-        <FlatList
-          style={styles.recommendContainer}
-          data={this.state.data}
-          renderItem={this._renderItem}
-        />
+      <View style={styles.recommendContainer}>
+        <View style={styles.recommendTop}>
+          <FlatList
+            data={this.state.data}
+            renderItem={this._renderItem}
+            horizontal={true}
+          />
+        </View>
+        <View style={styles.recommendMiddle}>
+          <FlatList
+//            data={this.state.data}
+//            renderItem={this._renderItem()}
+          />
+        </View>
       </View>
     );
   }
@@ -44,15 +52,30 @@ export default class Recommend extends PureComponent {
 const styles = StyleSheet.create({
   recommendContainer: {
     width: width,
-    height: 120,
-    overflow: "scroll",
-    borderWidth: 0
+    height: height,
+    // margin: 20,
+    // overflow: "scroll",
+    flexDirection: "row"
+  },
+  recommendTop: {
+//    width: width,
+    height: 200,
+    borderRadius: 8,
+    margin: 20,
+    backgroundColor: "white"
+  },
+  recommendMiddle: {
+    width: width,
+    height: 240,
+    borderRadius: 8,
+    marginHorizontal: 20
   },
   recommendImg: {
-    width: 100,
-    height: 60,
+    width: 300,
+    height: 200,
     borderRadius: 8,
-    borderWidth: 0
+    borderWidth: 0,
+    flexDirection: "row"
   }
 });
 

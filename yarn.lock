@@ -6706,6 +6706,13 @@ react-native-code-push@^5.2.0-beta:
     react-timer-mixin "^0.13.2"
     rebound "^0.0.13"
 
+react-native-drawer@^2.5.0:
+  version "2.5.0"
+  resolved "http://registry.npm.taobao.org/react-native-drawer/download/react-native-drawer-2.5.0.tgz#022cba5c0516126a9fc9cce3185cb46c644b51c4"
+  dependencies:
+    prop-types "^15.5.8"
+    tween-functions "^1.0.1"
+
 "react-native-html-render@git+https://github.com/soliury/react-native-html-render":
   version "1.0.5"
   resolved "git+https://github.com/soliury/react-native-html-render#4f591ef66f63a01c6c1e97d8bb579ce05eeae5be"
@@ -8312,6 +8319,10 @@ tunnel-agent@^0.6.0:
   resolved "http://registry.npm.taobao.org/tunnel-agent/download/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@^1.0.1:
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/tween-functions/download/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"

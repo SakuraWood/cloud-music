@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import Drawer from "react-native-drawer";
-import { StyleSheet, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Dimensions,
+  TouchableOpacity
+} from "react-native";
 import Title from "./Title";
 import Recommend from "./Recommend";
 import SlideBar from "./../../slidebar/views/SlideBar";
@@ -12,9 +18,7 @@ export default class Home extends Component {
     super(props);
     this.state = {};
   }
-  closeSlideBar = () => {
-    this._drawer.close();
-  };
+
   openSlideBar = () => {
     this._drawer.open();
   };
@@ -22,12 +26,19 @@ export default class Home extends Component {
   render() {
     return (
       <Drawer
+        type="static"
         ref={ref => (this._drawer = ref)}
         content={<SlideBar />}
-        openDrawerOffset={0.35}
+        openDrawerOffset={0.2}
+        closeDrawerOffset={-3}
+        panCloseMask={0.2}
       >
         <View style={styles.home}>
-          <Title ref="category" />
+          <Title
+            ref="category"
+            openSlideBar={this.openSlideBar}
+            closeSlideBar={this.closeSlideBar}
+          />
           <Recommend />
         </View>
       </Drawer>

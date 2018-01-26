@@ -6608,6 +6608,12 @@ react-addons-pure-render-mixin@15.6.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
+react-blur@^0.6.0:
+  version "0.6.0"
+  resolved "http://registry.npm.taobao.org/react-blur/download/react-blur-0.6.0.tgz#01565e7bf03ef73eb644fb9a77656c15e3b37c70"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/react-clone-referenced-element/download/react-clone-referenced-element-1.0.1.tgz#2bba8c69404c5e4a944398600bcc4c941f860682"
@@ -6657,7 +6663,7 @@ react-mixin@3.1.0:
   version "3.1.1"
   resolved "git+https://github.com/const-z/react-native-barcodescanner#5db3a2c4140a3b6db6e1b74c0bfaae65eb214b5a"
 
-react-native-blur@3.2.2:
+react-native-blur@^3.2.2:
   version "3.2.2"
   resolved "http://registry.npm.taobao.org/react-native-blur/download/react-native-blur-3.2.2.tgz#5bfb50638d148982c9560436554ed01d77d6d07d"
   dependencies:

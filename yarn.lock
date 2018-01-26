@@ -6608,6 +6608,12 @@ react-addons-pure-render-mixin@15.6.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
+react-blur@^0.6.0:
+  version "0.6.0"
+  resolved "http://registry.npm.taobao.org/react-blur/download/react-blur-0.6.0.tgz#01565e7bf03ef73eb644fb9a77656c15e3b37c70"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/react-clone-referenced-element/download/react-clone-referenced-element-1.0.1.tgz#2bba8c69404c5e4a944398600bcc4c941f860682"
@@ -6657,7 +6663,7 @@ react-mixin@3.1.0:
   version "3.1.1"
   resolved "git+https://github.com/const-z/react-native-barcodescanner#5db3a2c4140a3b6db6e1b74c0bfaae65eb214b5a"
 
-react-native-blur@3.2.2:
+react-native-blur@^3.2.2:
   version "3.2.2"
   resolved "http://registry.npm.taobao.org/react-native-blur/download/react-native-blur-3.2.2.tgz#5bfb50638d148982c9560436554ed01d77d6d07d"
   dependencies:
@@ -6705,6 +6711,13 @@ react-native-code-push@^5.2.0-beta:
     prop-types "^15.5.10"
     react-timer-mixin "^0.13.2"
     rebound "^0.0.13"
+
+react-native-drawer@^2.5.0:
+  version "2.5.0"
+  resolved "http://registry.npm.taobao.org/react-native-drawer/download/react-native-drawer-2.5.0.tgz#022cba5c0516126a9fc9cce3185cb46c644b51c4"
+  dependencies:
+    prop-types "^15.5.8"
+    tween-functions "^1.0.1"
 
 "react-native-html-render@git+https://github.com/soliury/react-native-html-render":
   version "1.0.5"
@@ -8312,6 +8325,10 @@ tunnel-agent@^0.6.0:
   resolved "http://registry.npm.taobao.org/tunnel-agent/download/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@^1.0.1:
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/tween-functions/download/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"

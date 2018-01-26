@@ -1,15 +1,10 @@
-const React = require('react');
-const ReactNative = require('react-native');
-const {
-  Animated,
-  FlatList,
-  StyleSheet,
-  View,
-} = ReactNative;
+const React = require("react");
+const ReactNative = require("react-native");
+const { Animated, FlatList, StyleSheet, View } = ReactNative;
 
-const RNTesterPage = require('./RNTesterPage');
+const RNTesterPage = require("./RNTesterPage");
 
-const infoLog = require('infoLog');
+const infoLog = require("infoLog");
 
 const {
   FooterComponent,
@@ -21,47 +16,49 @@ const {
   genItemData,
   getItemLayout,
   pressItem,
-  renderSmallSwitchOption,
-} = require('./ListExampleShared');
+  renderSmallSwitchOption
+} = require("./ListExampleShared");
 
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
 const VIEWABILITY_CONFIG = {
   minimumViewTime: 3000,
   viewAreaCoveragePercentThreshold: 100,
-  waitForInteraction: true,
+  waitForInteraction: true
 };
 
 class FlatListExample extends React.PureComponent {
-  static title = '<FlatList>';
-  static description = 'Performant, scrollable list of data.';
+  static title = "<FlatList>";
+  static description = "Performant, scrollable list of data.";
 
   state = {
     data: genItemData(100),
     debug: false,
     horizontal: false,
-    filterText: '',
+    filterText: "",
     fixedHeight: true,
     logViewable: false,
-    virtualized: true,
+    virtualized: true
   };
 
-  _onChangeFilterText = (filterText) => {
-    this.setState({filterText});
+  _onChangeFilterText = filterText => {
+    this.setState({ filterText });
   };
 
-  _onChangeScrollToIndex = (text) => {
-    this._listRef.getNode().scrollToIndex({viewPosition: 0.5, index: Number(text)});
+  _onChangeScrollToIndex = text => {
+    this._listRef
+      .getNode()
+      .scrollToIndex({ viewPosition: 0.5, index: Number(text) });
   };
 
   _scrollPos = new Animated.Value(0);
   _scrollSinkX = Animated.event(
-    [{nativeEvent: { contentOffset: { x: this._scrollPos } }}],
-    {useNativeDriver: true},
+    [{ nativeEvent: { contentOffset: { x: this._scrollPos } } }],
+    { useNativeDriver: true }
   );
   _scrollSinkY = Animated.event(
-    [{nativeEvent: { contentOffset: { y: this._scrollPos } }}],
-    {useNativeDriver: true},
+    [{ nativeEvent: { contentOffset: { y: this._scrollPos } } }],
+    { useNativeDriver: true }
   );
 
   componentDidUpdate() {
@@ -69,15 +66,12 @@ class FlatListExample extends React.PureComponent {
   }
 
   render() {
-    const filterRegex = new RegExp(String(this.state.filterText), 'i');
-    const filter = (item) => (
-      filterRegex.test(item.text) || filterRegex.test(item.title)
-    );
+    const filterRegex = new RegExp(String(this.state.filterText), "i");
+    const filter = item =>
+      filterRegex.test(item.text) || filterRegex.test(item.title);
     const filteredData = this.state.data.filter(filter);
     return (
-      <RNTesterPage
-        noSpacer={true}
-        noScroll={true}>
+      <RNTesterPage noSpacer={true} noScroll={true}>
         <View style={styles.searchRow}>
           <View style={styles.options}>
             <PlainInput
@@ -91,11 +85,11 @@ class FlatListExample extends React.PureComponent {
             />
           </View>
           <View style={styles.options}>
-            {renderSmallSwitchOption(this, 'virtualized')}
-            {renderSmallSwitchOption(this, 'horizontal')}
-            {renderSmallSwitchOption(this, 'fixedHeight')}
-            {renderSmallSwitchOption(this, 'logViewable')}
-            {renderSmallSwitchOption(this, 'debug')}
+            {renderSmallSwitchOption(this, "virtualized")}
+            {renderSmallSwitchOption(this, "horizontal")}
+            {renderSmallSwitchOption(this, "fixedHeight")}
+            {renderSmallSwitchOption(this, "logViewable")}
+            {renderSmallSwitchOption(this, "debug")}
             <Spindicator value={this._scrollPos} />
           </View>
         </View>
@@ -107,19 +101,21 @@ class FlatListExample extends React.PureComponent {
           data={filteredData}
           debug={this.state.debug}
           disableVirtualization={!this.state.virtualized}
-          getItemLayout={this.state.fixedHeight ?
-            this._getItemLayout :
-            undefined
+          getItemLayout={
+            this.state.fixedHeight ? this._getItemLayout : undefined
           }
           horizontal={this.state.horizontal}
-          key={(this.state.horizontal ? 'h' : 'v') +
-          (this.state.fixedHeight ? 'f' : 'd')
+          key={
+            (this.state.horizontal ? "h" : "v") +
+            (this.state.fixedHeight ? "f" : "d")
           }
           legacyImplementation={false}
           numColumns={1}
           onEndReached={this._onEndReached}
           onRefresh={this._onRefresh}
-          onScroll={this.state.horizontal ? this._scrollSinkX : this._scrollSinkY}
+          onScroll={
+            this.state.horizontal ? this._scrollSinkX : this._scrollSinkY
+          }
           onViewableItemsChanged={this._onViewableItemsChanged}
           ref={this._captureRef}
           refreshing={false}
@@ -129,17 +125,19 @@ class FlatListExample extends React.PureComponent {
       </RNTesterPage>
     );
   }
-  _captureRef = (ref) => { this._listRef = ref; };
+  _captureRef = ref => {
+    this._listRef = ref;
+  };
   _getItemLayout = (data: any, index: number) => {
     return getItemLayout(data, index, this.state.horizontal);
   };
   _onEndReached = () => {
-    this.setState((state) => ({
-      data: state.data.concat(genItemData(100, state.data.length)),
+    this.setState(state => ({
+      data: state.data.concat(genItemData(100, state.data.length))
     }));
   };
-  _onRefresh = () => alert('onRefresh: nothing to refresh :P');
-  _renderItemComponent = ({item}) => {
+  _onRefresh = () => alert("onRefresh: nothing to refresh :P");
+  _renderItemComponent = ({ item }) => {
     return (
       <ItemComponent
         item={item}
@@ -152,20 +150,19 @@ class FlatListExample extends React.PureComponent {
   // This is called when items change viewability by scrolling into or out of
   // the viewable area.
   _onViewableItemsChanged = (info: {
-      changed: Array<{
-        key: string,
-        isViewable: boolean,
-        item: any,
-        index: ?number,
-        section?: any,
-      }>
-    }
-  ) => {
+    changed: Array<{
+      key: string,
+      isViewable: boolean,
+      item: any,
+      index: ?number,
+      section?: any
+    }>
+  }) => {
     // Impressions can be logged here
     if (this.state.logViewable) {
       infoLog(
-        'onViewableItemsChanged: ',
-        info.changed.map((v) => ({...v, item: '...'})),
+        "onViewableItemsChanged: ",
+        info.changed.map(v => ({ ...v, item: "..." }))
       );
     }
   };
@@ -176,16 +173,15 @@ class FlatListExample extends React.PureComponent {
   _listRef: FlatList<*>;
 }
 
-
 const styles = StyleSheet.create({
   options: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center"
   },
   searchRow: {
-    paddingHorizontal: 10,
-  },
+    paddingHorizontal: 10
+  }
 });
 
 module.exports = FlatListExample;

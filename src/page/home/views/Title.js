@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  TouchableHighlight
+} from "react-native";
 
 const { width, height } = Dimensions.get("window");
 export default class Title extends Component {
@@ -9,14 +16,23 @@ export default class Title extends Component {
       titleName: "Home"
     };
   }
+  _closeSlideBar = () => {
+    this.props.closeSlideBar();
+  };
+
+  _openSlideBar = () => {
+    this.props.openSlideBar();
+  };
 
   render() {
     return (
       <View style={styles.title}>
-        <Image
-          style={styles.category}
-          source={require("./../../../assets/img/Category.png")}
-        />
+        <TouchableHighlight onPress={this._openSlideBar}>
+          <Image
+            style={styles.category}
+            source={require("./../../../assets/img/Category.png")}
+          />
+        </TouchableHighlight>
         <Text style={styles.text}>{this.state.titleName}</Text>
         <Image
           style={styles.search}

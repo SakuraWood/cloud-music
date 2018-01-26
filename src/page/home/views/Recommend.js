@@ -21,6 +21,11 @@ export default class Recommend extends PureComponent {
         require("./../../../assets/img/Koala.jpg"),
         require("./../../../assets/img/Hydrangeas.jpg")
       ],
+      photo: [
+        require("./../../../assets/img/Jellyfish.jpg"),
+        require("./../../../assets/img/Koala.jpg"),
+        require("./../../../assets/img/Hydrangeas.jpg")
+      ]
     };
   }
 
@@ -29,20 +34,34 @@ export default class Recommend extends PureComponent {
   };
 
   render() {
+    const topPhoto = this.state.data;
+    const middlePhoto = this.state.photo;
     return (
       <View style={styles.recommendContainer}>
         <View style={styles.recommendTop}>
           <FlatList
-            data={this.state.data}
+            data={topPhoto}
             renderItem={this._renderItem}
             horizontal={true}
           />
         </View>
         <View style={styles.recommendMiddle}>
-          <FlatList
-//            data={this.state.data}
-//            renderItem={this._renderItem()}
-          />
+          <View>
+            <Text>2323</Text>
+            <FlatList
+              data={middlePhoto}
+              renderItem={this._renderItem}
+              horizontal={true}
+            />
+          </View>
+          <View>
+            <Text>2323</Text>
+            <FlatList
+              data={middlePhoto}
+              renderItem={this._renderItem}
+              horizontal={true}
+            />
+          </View>
         </View>
       </View>
     );
@@ -55,19 +74,21 @@ const styles = StyleSheet.create({
     height: height,
     // margin: 20,
     // overflow: "scroll",
-    flexDirection: "row"
+    flexDirection: "column"
   },
   recommendTop: {
-//    width: width,
+    width: width,
     height: 200,
     borderRadius: 8,
     margin: 20,
+//    flex: 1,
     backgroundColor: "white"
   },
   recommendMiddle: {
     width: width,
     height: 240,
     borderRadius: 8,
+    flex: 1,
     marginHorizontal: 20
   },
   recommendImg: {

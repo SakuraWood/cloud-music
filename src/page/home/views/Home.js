@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, Image, Dimensions } from "react-native";
 import Title from "./Title";
 import Recommend from "./Recommend";
+import TabBar from "./TabBar";
 
 const { width, height } = Dimensions.get("window");
 
@@ -16,6 +17,7 @@ export default class Home extends Component {
       <View style={styles.home}>
         <Title />
         <Recommend />
+        <TabBar />
       </View>
     );
   }

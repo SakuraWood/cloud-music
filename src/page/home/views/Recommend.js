@@ -20,7 +20,7 @@ export default class Recommend extends PureComponent {
         require("./../../../assets/img/Jellyfish.jpg"),
         require("./../../../assets/img/Koala.jpg"),
         require("./../../../assets/img/Hydrangeas.jpg")
-      ],
+      ]
     };
   }
 
@@ -40,8 +40,8 @@ export default class Recommend extends PureComponent {
         </View>
         <View style={styles.recommendMiddle}>
           <FlatList
-//            data={this.state.data}
-//            renderItem={this._renderItem()}
+          //            data={this.state.data}
+          //            renderItem={this._renderItem()}
           />
         </View>
       </View>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   recommendTop: {
-//    width: width,
+    //    width: width,
     height: 200,
     borderRadius: 8,
     margin: 20,

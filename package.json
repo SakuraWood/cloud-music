@@ -62,6 +62,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "eslint-plugin-prettier": "^2.5.0",
     "fetch-detector": "^1.0.0",
     "fetch-ie8": "^1.4.3",
@@ -84,12 +85,14 @@
     "react-native-html-render": "git+https://github.com/soliury/react-native-html-render",
     "react-native-scrollable-tab-view": "git+https://github.com/flyskywhy/react-native-scrollable-tab-view#0.6.6",
     "react-native-vector-icons": "^4.0.1",
+    "react-native-video": "^2.0.0",
     "react-redux": "4.4.8",
     "react-web": "https://github.com/flyskywhy/react-web.git#99adb56",
     "redux": "^3.5.2",
     "redux-actions": "^2.0.1",
     "redux-logger": "^3.0.1",
     "redux-promise": "^0.5.3",
+    "redux-saga": "^0.16.0",
     "redux-thunk": "^2.1.0"
   },
   "standard": {

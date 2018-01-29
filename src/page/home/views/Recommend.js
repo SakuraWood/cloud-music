@@ -40,6 +40,7 @@ export default class Recommend extends PureComponent {
       <View style={styles.recommendContainer}>
         <View style={styles.recommendTop}>
           <FlatList
+            style={styles.flatList}
             data={topPhoto}
             renderItem={this._renderItem}
             horizontal={true}
@@ -47,7 +48,9 @@ export default class Recommend extends PureComponent {
         </View>
         <View style={styles.recommendMiddle}>
           <View>
-            <Text>2323</Text>
+            <Text style={styles.recommendText}>
+              屏幕dp---{width}---{height}
+            </Text>
             <FlatList
               data={middlePhoto}
               renderItem={this._renderItem}
@@ -73,16 +76,20 @@ const styles = StyleSheet.create({
     width: width,
     height: height,
     // margin: 20,
-    // overflow: "scroll",
+    overflow: "scroll",
     flexDirection: "column"
   },
   recommendTop: {
     width: width,
     height: 200,
     borderRadius: 8,
-    margin: 20,
+    marginVertical: 10,
+    marginHorizontal: 45,
 //    flex: 1,
     backgroundColor: "white"
+  },
+  flatList: {
+    marginRight: 20
   },
   recommendMiddle: {
     width: width,
@@ -97,6 +104,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 0,
     flexDirection: "row"
+  },
+  recommendText: {
+    color: "yellow"
   }
 });
 

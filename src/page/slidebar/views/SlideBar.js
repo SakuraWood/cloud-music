@@ -9,9 +9,12 @@ import {
   FlatList
 } from "react-native";
 
+// 此句在移动端未生效
 if (Platform.OS !== "web") {
   const BlurView = require("react-native-blur");
 }
+const BlurView = require("react-native-blur");
+
 const { width, height } = Dimensions.get("window");
 
 export default class SlideBar extends Component {

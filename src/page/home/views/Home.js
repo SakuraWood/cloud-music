@@ -29,7 +29,7 @@ export default class Home extends Component {
       <Drawer
         type="static"
         ref={ref => (this._drawer = ref)}
-        content={<SlideBar />}
+//        content={<SlideBar />}
         openDrawerOffset={0.2}
         closeDrawerOffset={-3}
         panCloseMask={0.2}

@@ -1,10 +1,10 @@
-import { createAction } from "redux-actions";
-import * as types from "./actionTypes";
+import { createAction } from 'redux-actions';
+import * as types from './actionTypes';
 
-export const getHomeList = createAction(types.GET_HOME_LIST, async () => {
+export const getSongs = createAction(types.GET_SONGS, async () => {
   return {};
 });
 
-export const getHomeAlbum = createAction(types.GET_HOME_ALBUMS, async () => {
+export const getUser = createAction(types.GET_USERS, async () => {
   return {};
 });

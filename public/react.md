@@ -10,7 +10,7 @@ React使用虚拟dom，这一点和vue是一样的，何谓虚拟dom呢？也就
 
 ## 关键词二：MVVM
 
-react 是MVVM吗？ 并不算是严格意义上的MVVM架构，Angular才是。React只是单向数据绑定，这点和Vue一样。不过这并不是说React没有借鉴MVVM的思想。与之前的架构相比，如MVC和你们所用到的MVP，你需要同时关心两件事情：
+React 是MVVM吗？ 并不算是严格意义上的MVVM架构，Angular才是。React只是单向数据绑定，这点和Vue一样。不过这并不是说React没有借鉴MVVM的思想。与之前的架构相比，如MVC和你们所用到的MVP，你需要同时关心两件事情：
 
 1. 数据更新和数据更新的动作
 2. 界面更新和界面更新的动作

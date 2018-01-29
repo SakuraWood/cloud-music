@@ -1,10 +1,23 @@
-import * as types from "./actionTypes";
+import { handleActions } from 'redux-actions';
+import * as types from './actionTypes';
 
-export default function(state = null, action) {
-  switch (types) {
-    case types.CLOSE_APP:
-      return {};
-    default:
-      return state;
-  }
-}
+const initialState = {
+  searchSongsList: [],
+  userInfo: {},
+};
+
+export default handleActions(
+  {
+    [types.GET_SONGS]: {
+      next(state, action) {
+        return Object.assign(state, { searchSongsList: action.payload });
+      },
+    },
+    [types.GET_USERS]: {
+      next(state, action) {
+        return Object.assign(state, { userInfo: action.payload });
+      },
+    },
+  },
+  initialState,
+);

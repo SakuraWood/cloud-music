@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import home from './../page/home/reducer';
+import search from './../page/search/reducer';
 
 export default combineReducers({
-  home,
+  search,
 });

@@ -1,29 +1,29 @@
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import actions from "./../actions";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import actions from './../actions';
 
 const options = {
-  withRef: true
+  withRef: true,
 };
 
 export default function connectComponent({
   mapStateToProps,
   mapDispatchToProps,
   mergeProps,
-  LayoutComponent
+  LayoutComponent,
 }) {
   return connect(
     mapStateToProps ||
-      function(state) {
+      (() => {
         return {};
-      },
+      }),
     mapDispatchToProps ||
-      function(dispatch) {
+      (dispatch => {
         return {
-          actions: bindActionCreators(actions, dispatch)
+          actions: bindActionCreators(actions, dispatch),
         };
-      },
+      }),
     mergeProps,
-    options
+    options,
   )(LayoutComponent);
 }

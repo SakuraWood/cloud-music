@@ -67,11 +67,13 @@ module.exports = {
     'no-use-before-define': 0, //忽略
     'no-underscore-dangle': 0, //命名允许下划线
     'no-return-assign': ['error', 'except-parens'], //除非返回时使用括号，否则不允许返回赋值
+    'no-unused-expressions': 0,
     /* 主观风格,考虑到每个人编辑器配置不同，尤其是格式化风格，暂时禁用 */
     'arrow-body-style': 0,
     'object-curly-newline': 0,
+    'function-paren-newline': 0,
     'object-curly-spacing': 0,
     'object-shorthand': ['error', 'properties'], //当键与属性名称一样的时候，强制使用对象字面量简写
-    'arrow-parens': ['error', 'as-needed'], //参数只有一个时，允许省略括号
+    'arrow-parens': ['error', 'as-needed'], //参数只有一个时，箭头函数允许省略括号
   },
 };

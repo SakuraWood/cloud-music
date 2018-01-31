@@ -2,6 +2,7 @@ import { createAction } from 'redux-actions';
 import * as types from './actionTypes';
 
 export const getSongs = createAction(types.GET_SONGS, async result => {
+  console.log(result);
   return {
     songs: result.songs,
   };

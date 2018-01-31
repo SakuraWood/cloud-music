@@ -1,7 +1,7 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
+import { all, call, put, takeEvery, fork } from 'redux-saga/effects';
 import axios from 'axios';
 import { GET_SONGS, GET_USERS, START_SEARCH } from './actionTypes';
-import { getUser, getSongs, searchSongs } from './actions';
+import { getUser, getSongs } from './actions';
 
 export function* getSongInfo(id) {
   yield id;
@@ -9,11 +9,13 @@ export function* getSongInfo(id) {
 
 export function* searchSongList(text) {
   try {
+    console.log(text);
     const response = yield call(
       axios.get,
       `http://localhost:4000/search?keywords= ${text}`,
     );
-    yield put(getSongs(JSON.stringify(response)));
+    console.log(response);
+    yield put(getSongs(response.data.result));
   } catch (e) {
     console.log(e);
   }

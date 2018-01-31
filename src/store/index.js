@@ -13,7 +13,7 @@ const logger = createLogger({
 });
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
-let composeEnhancers = compose;
+let composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 if (isDebuggingInChrome) {
   middlewares.push(logger);

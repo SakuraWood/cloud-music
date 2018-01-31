@@ -68,6 +68,7 @@ module.exports = {
     'no-underscore-dangle': 0, //命名允许下划线
     'no-return-assign': ['error', 'except-parens'], //除非返回时使用括号，否则不允许返回赋值
     'no-unused-expressions': 0,
+    'react/jsx-filename-extension': 0, //native用不了jsx，我下巴都惊呆了，暂时没有解决办法
     /* 主观风格,考虑到每个人编辑器配置不同，尤其是格式化风格，暂时禁用 */
     'arrow-body-style': 0,
     'object-curly-newline': 0,

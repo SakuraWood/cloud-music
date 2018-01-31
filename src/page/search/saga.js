@@ -13,7 +13,7 @@ export function* searchSongList(action) {
     const query = action.payload.text;
     const response = yield call(
       axios.get,
-      `http://localhost:4000/search?keywords= ${query}`,
+      `http://45.32.81.42:4000/search?keywords= ${query}`,
     );
     console.log(response);
     yield put(getSongs(response.data.result));

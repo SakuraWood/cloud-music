@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   search: {
     width: 300,
     height: 50,
+    backgroundColor: "red",
   },
 });
 
@@ -45,10 +46,10 @@ export default connect(mapStateToProps, dispatch => ({
   startSearch(query) {
     return dispatch(startSearch(query));
   },
-  getSongs(id) {
-    return dispatch(getSongs(id));
-  },
-  getUser(id) {
-    return dispatch(getUser(id));
-  },
+  // getSongs(id) {
+  //   return dispatch(getSongs(id));
+  // },
+  // getUser(id) {
+  //   return dispatch(getUser(id));
+  // },
 }))(Search);

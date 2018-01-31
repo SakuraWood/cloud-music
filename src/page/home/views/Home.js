@@ -3,9 +3,7 @@ import Drawer from 'react-native-drawer';
 import {
   StyleSheet,
   View,
-  Image,
   Dimensions,
-  TouchableOpacity,
 } from 'react-native';
 import Title from './Title';
 import Recommend from './Recommend';
@@ -29,14 +27,14 @@ export default class Home extends Component {
       <Drawer
         type="static"
         ref={ref => (this._drawer = ref)}
-        //        content={<SlideBar />}
+        content={<SlideBar />}
         openDrawerOffset={0.2}
         closeDrawerOffset={-3}
         panCloseMask={0.2}
       >
         <View style={styles.home}>
           <Title
-            ref="category"
+            ref ={ref=>{this.category = ref}}
             openSlideBar={this.openSlideBar}
             closeSlideBar={this.closeSlideBar}
           />
@@ -51,8 +49,8 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   home: {
     backgroundColor: '#2A2B33',
-    width: width,
-    height: height,
+    width,
+    height,
     flexDirection: 'column',
   },
 });

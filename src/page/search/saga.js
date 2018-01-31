@@ -4,7 +4,18 @@ import { GET_SONGS, GET_USERS, START_SEARCH } from './actionTypes';
 import { getUser, getSongs } from './actions';
 
 export function* getSongInfo(id) {
-  yield id;
+  
+  try {
+    console.log(id);
+    const response = yield call(
+      axios.get,
+      `http://45.32.81.42:4000/id?keywords= ${id}`,
+    );
+    console.log(response);
+    yield put(getSongs(response.data.result.songs[0].album.id));
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 export function* searchSongList(text) {
@@ -12,10 +23,10 @@ export function* searchSongList(text) {
     console.log(text);
     const response = yield call(
       axios.get,
-      `http://localhost:4000/search?keywords= ${text}`,
+      `http://45.32.81.42:4000/search?keywords= ${text}`,
     );
     console.log(response);
-    yield put(getSongs(response.data.result));
+    yield put(getSongs(response.data.result.songs[0].album.id));
   } catch (e) {
     console.log(e);
   }

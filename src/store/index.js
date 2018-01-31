@@ -11,7 +11,7 @@ const logger = createLogger({
   collapsed: true,
   duration: true,
 });
-const sagaMiddleware = createSagaMiddleware(sagas);
+const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
 let composeEnhancers = compose;
 
@@ -20,9 +20,10 @@ if (isDebuggingInChrome) {
 } else {
   const { composeWithDevTools } = require('remote-redux-devtools');
   const config = {
+    realtime:true,
     name: Platform.OS,
     hostname: 'localhost',
-    port: 5678,
+    port: 8081,
   };
 
   composeEnhancers = composeWithDevTools(config);

@@ -103,7 +103,7 @@
     "redux-promise": "^0.5.3",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.1.0",
-    "remote-redux-devtools": "^0.5.12"
+    "remote-redux-devtools": "^0.5.0"
   },
   "standard": {
     "ignore": [],

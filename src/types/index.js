@@ -1,1 +1,1 @@
-import * as homeActions from "./../page/home/actionTypes";
+import * as homeActions from './../page/home/actionTypes';

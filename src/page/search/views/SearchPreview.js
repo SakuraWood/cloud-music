@@ -13,15 +13,12 @@ const { width } = Dimensions.get('window');
 export default class SearchPreview extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      searchSongsList: props.songList,
-    };
+    this.state = {};
   }
-
   componentWillReceiveProps(nextProps) {
-    this.setState({ searchSongsList: nextProps.songList });
+    console.log('子组件新的状态');
+    console.log(nextProps);
   }
-
   _renderItem = ({ item }) => {
     return (
       <TouchableOpacity>
@@ -34,7 +31,7 @@ export default class SearchPreview extends Component {
     return (
       <FlatList
         style={styles.flatList}
-        data={this.state.searchSongsList}
+        data={this.props.songList}
         renderItem={this._renderItem}
       />
     );

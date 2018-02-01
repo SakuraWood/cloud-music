@@ -8,25 +8,17 @@ const initialState = {
 
 export default handleActions(
   {
-    [types.GET_SONGS]: {
-      next(state, action) {
-        console.log(`action到底是什么？     ${action}`);
-        console.log(action);
-        return Object.assign(state, {
-          searchSongsList: action.payload.result.songs,
-        });
-      },
+    [types.GET_SONGS]: (state, action) => {
+      console.log(`组件action到底是什么？     ${action}`);
+      console.log(action);
+      return { ...state, searchSongsList: action.payload.result.songs };
     },
-    [types.GET_USERS]: {
-      next(state, action) {
-        return Object.assign(state, { userInfo: action.payload });
-      },
+    [types.GET_USERS]: (state, action) => {
+      return { ...state, userInfo: action.payload };
     },
-    [types.START_SEARCH]: {
-      next(state) {
-        console.log('search start');
-        return Object.assign(state, {});
-      },
+    [types.START_SEARCH]: state => {
+      console.log('search start');
+      return state;
     },
   },
   initialState,

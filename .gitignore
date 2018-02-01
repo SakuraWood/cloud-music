@@ -20,6 +20,7 @@ yarn-error.log*
 .idea/
 /android/.gradle
 /android/.idea/
+/android/.settings/
 /andriod/android.iml
 /android/local.properties
 /android/app/build/

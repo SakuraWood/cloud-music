@@ -16,7 +16,7 @@ export function* searchSongList(action) {
       `http://45.32.81.42:4000/search?keywords= ${query}`,
     );
     console.log(response);
-    yield put(getSongs(response.data.result.songs[0].album.id));
+    yield put(getSongs(response.data.result));
   } catch (e) {
     console.log(e);
   }

@@ -16,6 +16,7 @@ export default class Title extends Component {
       titleName: "Home"
     };
   }
+
   _closeSlideBar = () => {
     this.props.closeSlideBar();
   };

@@ -26,11 +26,6 @@ class SearchContainer extends Component {
     console.log(nextProps);
   }
 
-  // shouldComponentUpdate() {
-  //   console.log('组件应当更新');
-  //   return true;
-  // }
-
   componentWillUpdate() {
     console.log('组件准备更新');
   }
@@ -82,7 +77,7 @@ const styles = StyleSheet.create({
 
 /**
  * 映射state到此容器组件，每当state更新，就会执行
- * @param {*} state
+ * @param {object} state
  */
 const mapStateToProps = state => {
   console.log('组件新的状态是啥');
@@ -94,7 +89,7 @@ const mapStateToProps = state => {
 
 /**
  * 映射分发方法到此容器组件
- * @param {*} dispatch
+ * @param {function} dispatch
  */
 const mapDispatchToProps = dispatch => {
   return {

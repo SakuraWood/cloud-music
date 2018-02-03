@@ -1,13 +1,13 @@
 import React from 'react';
 import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
-import RootNavigator from './router';
+import RootRouter from './router';
 import { routerBack, routerGo } from './actions';
 
 const Router = () => {
   const { navigationState, dispatch } = this.props;
   return (
-    <RootNavigator
+    <RootRouter
       navigation={addNavigationHelpers({
         dispatch,
         state: navigationState,

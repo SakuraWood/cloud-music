@@ -1,9 +1,9 @@
-import { StackNavigator } from 'react-navigation';
+import { StackRouter } from 'react-navigation';
 import Search from './../page/search/views/SearchContainer';
 import Play from './../page/play/views/PlayContainer';
 import Home from './../page/home/views/Home';
 
-const RootNavigator = StackNavigator({
+const RootRouter = StackRouter({
   Search: {
     screen: Search,
     navigationOptions: {
@@ -24,4 +24,4 @@ const RootNavigator = StackNavigator({
   },
 });
 
-export default RootNavigator;
+export default RootRouter;

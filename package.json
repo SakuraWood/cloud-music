@@ -69,7 +69,6 @@
   ],
   "dependencies": {
     "axios": "^0.17.1",
-    "babel-plugin-react-native-sass-classname": "^0.0.9",
     "fetch-detector": "^1.0.0",
     "fetch-ie8": "^1.4.3",
     "flux-standard-action": "^1.2.0",
@@ -78,6 +77,7 @@
     "lodash": "^4.15.0",
     "markdown": "0.5.0",
     "moment": "^2.14.1",
+    "node-sass": "^4.7.2",
     "prop-types": "^15.6.0",
     "query-string": "^4.2.3",
     "react": "16.2.0",

@@ -13,7 +13,6 @@ import {
 if (Platform.OS !== 'web') {
   const BlurView = require('react-native-blur');
 }
-const BlurView = require('react-native-blur');
 
 const { width, height } = Dimensions.get('window');
 

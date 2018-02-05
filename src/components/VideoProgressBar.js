@@ -46,20 +46,26 @@ class VideoProgressBar extends Component {
 
   render() {
     return (
-      <View>
-        <View>
-          <Text>{this.state.currentPlayTime}</Text>
+      <View style={styles.container}>
+        <View style={styles.timeprogress}>
+          <Text style={styles.current}>{this.state.currentPlayTime}</Text>
           <View style={styles.progerss}>
             <TouchableOpacity {...this._dragBar.panHandlers}>
               <View style={styles.bar} />
             </TouchableOpacity>
           </View>
-          <Text>{this.state.songInfo.time}</Text>
+          <Text style={styles.time}>{this.state.songInfo.time}</Text>
         </View>
-        <View>
-          <Image source={require('./../assets/img/backward.png')} />
-          <Image source={this.state.playOrPause} />
-          <Image source={require('./../assets/img/forward.png')} />
+        <View style={styles.playkey}>
+          <Image
+            source={require('./../assets/img/backward.png')}
+            style={styles.backward}
+          />
+          <Image source={this.state.playOrPause} style={styles.play} />
+          <Image
+            source={require('./../assets/img/forward.png')}
+            style={styles.forward}
+          />
         </View>
       </View>
     );
@@ -67,23 +73,38 @@ class VideoProgressBar extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: { flexDirection: 'column', alignItems: 'center', bottom: 30 },
+  timeprogress: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  current: {
+    fontSize: 18,
+  },
   progerss: {
     width: 300,
     height: 10,
     paddingTop: 4,
     paddingBottom: 4,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
   },
   bar: {
     width: 6,
     height: 10,
-    backgroundColor: this.state.bg,
-    left: this.state.left,
+    backgroundColor: '#aea',
   },
+  time: {
+    fontSize: 18,
+  },
+  playkey: {
+    flex: 1,
+    width: 300,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  backward: { width: 30, height: 30 },
+  play: { width: 35, height: 35 },
+  forward: { width: 30, height: 30 },
 });
 
-const mapStateToProps = (state, ownProps) => ({});
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(VideoProgressBar);
+export default VideoProgressBar;

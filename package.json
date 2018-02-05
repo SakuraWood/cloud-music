@@ -58,17 +58,18 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "test": "node node_modules/jest/bin/jest.js",
-    "web":
-      "node node_modules/react-web/local-cli/cli.js start web/webpack.config.js",
-    "build-web":
-      "node node_modules/react-web/local-cli/cli.js bundle web/webpack.config.js"
+    "web": "node node_modules/react-web/local-cli/cli.js start web/webpack.config.js",
+    "build-web": "node node_modules/react-web/local-cli/cli.js bundle web/webpack.config.js"
   },
   "jest": {
     "preset": "jest-expo"
   },
-  "pre-commit": ["eslint"],
+  "pre-commit": [
+    "eslint"
+  ],
   "dependencies": {
     "axios": "^0.17.1",
+    "babel-plugin-react-native-sass-classname": "^0.0.9",
     "fetch-detector": "^1.0.0",
     "fetch-ie8": "^1.4.3",
     "flux-standard-action": "^1.2.0",
@@ -80,26 +81,22 @@
     "prop-types": "^15.6.0",
     "query-string": "^4.2.3",
     "react": "16.2.0",
-    "react-navigation": "^1.0.0-beta.27",
     "react-addons-pure-render-mixin": "15.6.2",
     "react-blur": "^0.6.0",
     "react-dom": "16.0.0",
     "react-native": "0.52.0",
-    "react-native-barcodescanner":
-      "git+https://github.com/const-z/react-native-barcodescanner",
+    "react-native-barcodescanner": "git+https://github.com/const-z/react-native-barcodescanner",
     "react-native-blur": "^3.2.2",
     "react-native-button": "2.1.0",
     "react-native-camera": "0.12.0",
     "react-native-code-push": "^5.2.0-beta",
-    "react-native-deprecated-custom-components":
-      "git+https://github.com/facebookarchive/react-native-custom-components",
+    "react-native-deprecated-custom-components": "git+https://github.com/facebookarchive/react-native-custom-components",
     "react-native-drawer": "^2.5.0",
-    "react-native-html-render":
-      "git+https://github.com/soliury/react-native-html-render",
-    "react-native-scrollable-tab-view":
-      "git+https://github.com/flyskywhy/react-native-scrollable-tab-view#0.6.6",
+    "react-native-html-render": "git+https://github.com/soliury/react-native-html-render",
+    "react-native-scrollable-tab-view": "git+https://github.com/flyskywhy/react-native-scrollable-tab-view#0.6.6",
     "react-native-vector-icons": "^4.0.1",
     "react-native-video": "^2.0.0",
+    "react-navigation": "^1.0.0-beta.27",
     "react-redux": "4.4.8",
     "react-web": "https://github.com/flyskywhy/react-web.git#99adb56",
     "redux": "^3.5.2",
@@ -108,12 +105,18 @@
     "redux-promise": "^0.5.3",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.1.0",
-    "remote-redux-devtools": "^0.5.0"
+    "remote-redux-devtools": "^0.5.0",
+    "remote-redux-devtools-on-debugger": "^0.8.3"
   },
   "standard": {
     "ignore": [],
-    "globals": ["__DEV__"],
+    "globals": [
+      "__DEV__"
+    ],
     "parser": "babel-eslint",
-    "plugins": ["flowtype", "react"]
+    "plugins": [
+      "flowtype",
+      "react"
+    ]
   }
 }

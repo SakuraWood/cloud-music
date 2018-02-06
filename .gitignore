@@ -28,3 +28,4 @@ yarn-error.log*
 /android/app/app.iml
 /android/reactnativehm.iml
 /web/output
+/ios/build/

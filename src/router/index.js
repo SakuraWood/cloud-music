@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import RootRouter from './router';
 import { routerBack, routerGo } from './actions';
 
-const Router = () => {
-  const { navigationState, dispatch } = this.props;
+const Router = props => {
+  const { navigationState, dispatch } = props;
   return (
     <RootRouter
       navigation={addNavigationHelpers({
@@ -30,6 +30,7 @@ const mapDispatchToProps = dispatch => {
     routerBack(id) {
       return dispatch(routerBack(id));
     },
+    dispatch,
   };
 };
 

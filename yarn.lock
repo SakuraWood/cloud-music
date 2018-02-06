@@ -7671,6 +7671,15 @@ remote-redux-devtools@^0.5.0:
     rn-host-detect "^1.0.1"
     socketcluster-client "^5.3.1"
 
+remotedev-rn-debugger@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/remotedev-rn-debugger/-/remotedev-rn-debugger-0.8.3.tgz#89f22ecb52d0bc56717c51fdc6dad98ff3541a45"
+  dependencies:
+    chalk "^2.0.1"
+    minimist "^1.2.0"
+    remotedev-server "^0.2.4"
+    semver "^5.4.1"
+
 remotedev-serialize@^0.1.0:
   version "0.1.0"
   resolved "http://registry.npm.taobao.org/remotedev-serialize/download/remotedev-serialize-0.1.0.tgz#074768e98cb7aa806f45994eeb0c8af95120ee32"

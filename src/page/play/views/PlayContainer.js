@@ -44,7 +44,7 @@ class PlayContainer extends Component {
           <Text>{this.state.songName}</Text>
           <Text>{this.state.songInfo.author}</Text>
         </View>
-        <VideoProgressBar songInfo={this.state.songInfo} />
+        <VideoProgressBar style={styles.progressbar} songInfo={this.state.songInfo} />
       </View>
     );
   }
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     flex: 1,
     justifyContent: 'space-between',
+    backgroundColor: '#aea',
   },
   title: {
     width,
@@ -89,6 +90,9 @@ const styles = StyleSheet.create({
     // 设置圆角
     borderRadius: 90,
     // 设置图片位置
+  },
+  progressbar: {
+    bottom: 30,
   },
 });
 

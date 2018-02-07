@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getSongs, getUser, startSearch } from './../actions';
 import SearchPreview from './SearchPreview';
+import { routerGo } from './../../../router/actions';
 
 class SearchContainer extends Component {
   constructor(props) {
@@ -52,7 +53,10 @@ class SearchContainer extends Component {
     return (
       <View>
         <TextInput style={styles.search} onChangeText={this._onChangeText} />
-        <SearchPreview songList={this.props.search.searchSongsList} />
+        <SearchPreview
+          songList={this.props.search.searchSongsList}
+          goPlay={this.props.goPlay}
+        />
       </View>
     );
   }
@@ -62,6 +66,7 @@ class SearchContainer extends Component {
 SearchContainer.propTypes = {
   startSearch: PropTypes.func.isRequired,
   search: PropTypes.arrayOf(PropTypes.object),
+  goPlay: PropTypes.func.isRequired,
 };
 
 SearchContainer.defaultProps = {
@@ -101,6 +106,9 @@ const mapDispatchToProps = dispatch => {
     },
     getUser(id) {
       return dispatch(getUser(id));
+    },
+    goPlay() {
+      return dispatch(routerGo('Play'));
     },
   };
 };

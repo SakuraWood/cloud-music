@@ -1,4 +1,4 @@
-import { StackRouter,StackNavigator } from 'react-navigation';
+import { StackRouter, StackNavigator } from 'react-navigation';
 import Search from './../page/search/views/SearchContainer';
 import Play from './../page/play/views/PlayContainer';
 import Home from './../page/home/views/Home';

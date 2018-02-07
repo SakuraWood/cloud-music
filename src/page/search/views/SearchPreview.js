@@ -19,9 +19,9 @@ export default class SearchPreview extends Component {
     console.log('子组件新的状态');
     console.log(nextProps);
   }
-  _renderItem = ({ item }) => {
+  _renderItem = ({ item, goPlay }) => {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={goPlay}>
         <Text style={styles.item}>{item.name}</Text>
       </TouchableOpacity>
     );
@@ -32,7 +32,7 @@ export default class SearchPreview extends Component {
       <FlatList
         style={styles.flatList}
         data={this.props.songList}
-        renderItem={this._renderItem}
+        renderItem={this._renderItem(this.props.goPlay)}
       />
     );
   }
@@ -41,6 +41,7 @@ export default class SearchPreview extends Component {
 /* props验证 */
 SearchPreview.propTypes = {
   songList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  goPlay: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({

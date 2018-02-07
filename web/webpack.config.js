@@ -1,19 +1,17 @@
-'use strict';
+let path = require('path');
+let webpack = require('webpack');
+let HtmlPlugin = require('webpack-html-plugin');
+let HasteResolverPlugin = require('haste-resolver-webpack-plugin');
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlPlugin = require('webpack-html-plugin');
-var HasteResolverPlugin = require('haste-resolver-webpack-plugin');
+let IP = '127.0.0.1';
+let PORT = 3000;
+let NODE_ENV = process.env.NODE_ENV;
+let ROOT_PATH = path.resolve(__dirname, '..');
+let PROD = 'production';
+let DEV = 'development';
+const isProd = NODE_ENV === 'production';
 
-var IP = '127.0.0.1';
-var PORT = 3000;
-var NODE_ENV = process.env.NODE_ENV;
-var ROOT_PATH = path.resolve(__dirname, '..');
-var PROD = 'production';
-var DEV = 'development';
-let isProd = NODE_ENV === 'production';
-
-var config = {
+let config = {
   paths: {
     src: path.join(ROOT_PATH, '.'),
     index: path.join(ROOT_PATH, 'web/index'),
@@ -34,7 +32,7 @@ module.exports = {
     ? ['babel-polyfill', config.paths.index]
     : [
         'babel-polyfill',
-        'webpack-dev-server/client?http://' + IP + ':' + PORT,
+        `webpack-dev-server/client?http://${IP}:${PORT}`,
         'webpack/hot/only-dev-server',
         config.paths.index,
       ],

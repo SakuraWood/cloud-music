@@ -98,6 +98,7 @@
     "react-native-vector-icons": "^4.0.1",
     "react-native-video": "^2.0.0",
     "react-navigation": "^1.0.0-beta.27",
+    "react-navigation-redux-helpers": "^1.0.1",
     "react-redux": "4.4.8",
     "react-web": "https://github.com/flyskywhy/react-web.git#99adb56",
     "redux": "^3.5.2",
@@ -107,7 +108,6 @@
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.1.0",
     "remote-redux-devtools": "^0.5.0",
-    "remote-redux-devtools-on-debugger": "^0.8.3",
     "remotedev-rn-debugger": "^0.8.3"
   },
   "standard": {

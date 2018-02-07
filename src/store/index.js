@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import { Platform } from 'react-native';
 import createSagaMiddleware from 'redux-saga';
+import { navMiddleware } from './../util/routerHelper';
 import sagas from '../sagas';
 import reducers from '../reducers';
 
@@ -14,9 +15,12 @@ const logger = createLogger({
 const sagaMiddleware = createSagaMiddleware(sagas);
 const middlewares = [sagaMiddleware];
 let composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 middlewares.push(logger);
+middlewares.push(navMiddleware);
+
 if (!isDebuggingInChrome) {
-  
+  console.log('nothing to do');
 } else {
   const { composeWithDevTools } = require('remote-redux-devtools');
   const config = {

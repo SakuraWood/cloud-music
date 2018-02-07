@@ -3,6 +3,7 @@ import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
 import RootRouter from './router';
 import { routerBack, routerGo } from './actions';
+import { navAddListener } from './../util/routerHelper';
 
 const Router = props => {
   const { navigationState, dispatch } = props;
@@ -11,6 +12,7 @@ const Router = props => {
       navigation={addNavigationHelpers({
         dispatch,
         state: navigationState,
+        navAddListener,
       })}
     />
   );

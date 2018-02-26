@@ -17,6 +17,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode/
+.vs/
 .idea/
 /android/.gradle
 /android/.idea/
